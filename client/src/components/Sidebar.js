@@ -11,7 +11,7 @@ const Sidebar = () => {
       <div className="hidden lg:block">
   
         <div className="my-2 mb-6">
-          <h1 className="text-2xl font-bold text-white">Conifer</h1>
+          <h1 className="text-2xl font-bold text-white">conifer</h1>
         </div>
             
         <ul>
