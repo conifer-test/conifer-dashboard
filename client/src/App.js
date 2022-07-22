@@ -3,7 +3,7 @@ import Dashboard from "./components/Dashboard";
 
 function App() {
   return (
-    <div class="flex h-screen">
+    <div className="flex h-screen">
       <Sidebar />
       <Dashboard />
     </div>
