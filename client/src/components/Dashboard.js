@@ -11,7 +11,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     const fetchTestFiles = async () => {
-      const {data} = await axios.get('http://localhost:3001/testFiles');
+      const {data} = await axios.get('http://localhost:5001/api/testRuns/6ff736cd-80da-4694-a1f2-7ec50dcd1933');
       console.log(data);
       setTestFiles(data);
     }
