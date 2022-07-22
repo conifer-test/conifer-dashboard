@@ -4,108 +4,108 @@
       "testFileName": "./cypress/e2e/second-test.cy.js",
       "testRunID": "6ff736cd-80da-4694-a1f2-7ec50dcd1933",
       "meta": {
-       "marge": {
-        "options": {
-         "html": false,
-         "json": true,
-         "overwrite": true,
-         "reportDir": "cypress/newResults",
-         "reportFilename": "[name]"
-        },
+        "marge": {
+          "options": {
+            "html": false,
+            "json": true,
+            "overwrite": true,
+            "reportDir": "cypress/newResults",
+            "reportFilename": "[name]"
+          },
         "version": "6.2.0"
-       },
-       "mocha": {
-        "version": "7.0.1"
-       },
-       "mochawesome": {
-        "options": {
-         "code": true,
-         "consoleReporter": "spec",
-         "quiet": false,
-         "reportFilename": "[name]",
-         "saveHtml": false,
-         "saveJson": true,
-         "useInlineDiffs": false
         },
-        "version": "7.1.3"
-       }
+        "mocha": {
+        "version": "7.0.1"
+        },
+        "mochawesome": {
+            "options": {
+            "code": true,
+            "consoleReporter": "spec",
+            "quiet": false,
+            "reportFilename": "[name]",
+            "saveHtml": false,
+            "saveJson": true,
+            "useInlineDiffs": false
+          },
+          "version": "7.1.3"
+        }
       },
       "results": [
-       {
-        "afterHooks": [],
-        "beforeHooks": [],
-        "duration": 0,
-        "failures": [],
-        "file": "cypress/e2e/second-test.cy.js",
-        "fullFile": "cypress/e2e/second-test.cy.js",
-        "passes": [],
-        "pending": [],
-        "root": true,
-        "rootEmpty": true,
-        "skipped": [],
-        "suites": [
-         {
+        {
           "afterHooks": [],
           "beforeHooks": [],
-          "duration": 695,
+          "duration": 0,
           "failures": [],
-          "file": "",
-          "fullFile": "",
-          "passes": [
-           "920b9d4a-1d7c-47ee-be6c-7fb085b610d8"
-          ],
+          "file": "cypress/e2e/second-test.cy.js",
+          "fullFile": "cypress/e2e/second-test.cy.js",
+          "passes": [],
+          "pending": [],
+          "root": true,
+          "rootEmpty": true,
+          "skipped": [],
+          "suites": [
+          {
+            "afterHooks": [],
+            "beforeHooks": [],
+            "duration": 695,
+            "failures": [],
+            "file": "",
+            "fullFile": "",
+            "passes": [
+              "920b9d4a-1d7c-47ee-be6c-7fb085b610d8"
+            ],
           "pending": [],
           "root": false,
           "rootEmpty": false,
           "skipped": [],
           "suites": [],
           "tests": [
-           {
-            "code": "cy.get('#button123').contains('H');",
-            "context": null,
-            "duration": 695,
-            "err": {},
-            "fail": false,
-            "fullTitle": "BUTTON CONTAINS H this is from test file 2",
-            "isHook": false,
-            "parentUUID": "b8247960-3922-44f7-94de-b25254b52202",
-            "pass": true,
-            "pending": false,
-            "skipped": false,
-            "speed": "fast",
-            "state": "passed",
-            "timedOut": null,
-            "title": "this is from test file 2",
-            "uuid": "920b9d4a-1d7c-47ee-be6c-7fb085b610d8"
-           }
+            {
+              "code": "cy.get('#button123').contains('H');",
+              "context": null,
+              "duration": 695,
+              "err": {},
+              "fail": false,
+              "fullTitle": "BUTTON CONTAINS H this is from test file 2",
+              "isHook": false,
+              "parentUUID": "b8247960-3922-44f7-94de-b25254b52202",
+              "pass": true,
+              "pending": false,
+              "skipped": false,
+              "speed": "fast",
+              "state": "passed",
+              "timedOut": null,
+              "title": "this is from test file 2",
+              "uuid": "920b9d4a-1d7c-47ee-be6c-7fb085b610d8"
+            }
           ],
           "title": "BUTTON CONTAINS H",
           "uuid": "b8247960-3922-44f7-94de-b25254b52202",
           "_timeout": 2000
-         }
+          }
         ],
         "tests": [],
         "title": "",
         "uuid": "ca50fd3a-fe3a-4575-8849-dbb09543aedd",
         "_timeout": 2000
-       }
+        }
       ],
-      "stats": {
-       "duration": 967,
-       "end": "2022-07-21T18:18:59.048Z",
-       "failures": 0,
-       "hasOther": false,
-       "hasSkipped": false,
-       "other": 0,
-       "passes": 1,
-       "passPercent": 100,
-       "pending": 0,
-       "pendingPercent": 0,
-       "skipped": 0,
-       "start": "2022-07-21T18:18:58.081Z",
-       "suites": 1,
-       "tests": 1,
-       "testsRegistered": 1
+        "stats": {
+        "duration": 967,
+        "end": "2022-07-21T18:18:59.048Z",
+        "failures": 0,
+        "hasOther": false,
+        "hasSkipped": false,
+        "other": 0,
+        "passes": 1,
+        "passPercent": 100,
+        "pending": 0,
+        "pendingPercent": 0,
+        "skipped": 0,
+        "start": "2022-07-21T18:18:58.081Z",
+        "suites": 1,
+        "tests": 1,
+        "testsRegistered": 1
       },
       "status": "fail"
     },
@@ -113,34 +113,34 @@
       "testFileName": "./cypress/e2e/third-test.cy.js",
       "testRunID": "6ff736cd-80da-4694-a1f2-7ec50dcd1933",
       "meta": {
-       "marge": {
-        "options": {
-         "html": false,
-         "json": true,
-         "overwrite": true,
-         "reportDir": "cypress/newResults",
-         "reportFilename": "[name]"
-        },
+        "marge": {
+          "options": {
+          "html": false,
+          "json": true,
+          "overwrite": true,
+          "reportDir": "cypress/newResults",
+          "reportFilename": "[name]"
+          },
         "version": "6.2.0"
-       },
-       "mocha": {
+      },
+      "mocha": {
         "version": "7.0.1"
-       },
-       "mochawesome": {
+      },
+      "mochawesome": {
         "options": {
-         "code": true,
-         "consoleReporter": "spec",
-         "quiet": false,
-         "reportFilename": "[name]",
-         "saveHtml": false,
-         "saveJson": true,
-         "useInlineDiffs": false
+          "code": true,
+          "consoleReporter": "spec",
+          "quiet": false,
+          "reportFilename": "[name]",
+          "saveHtml": false,
+          "saveJson": true,
+          "useInlineDiffs": false
         },
         "version": "7.1.3"
-       }
+        }
       },
       "results": [
-       {
+      {
         "afterHooks": [],
         "beforeHooks": [],
         "duration": 0,
@@ -153,7 +153,7 @@
         "rootEmpty": true,
         "skipped": [],
         "suites": [
-         {
+        {
           "afterHooks": [],
           "beforeHooks": [],
           "duration": 695,
@@ -161,7 +161,7 @@
           "file": "",
           "fullFile": "",
           "passes": [
-           "920b9d4a-1d7c-47ee-be6c-7fb085b610d8"
+            "920b9d4a-1d7c-47ee-be6c-7fb085b610d8"
           ],
           "pending": [],
           "root": false,
@@ -169,162 +169,162 @@
           "skipped": [],
           "suites": [],
           "tests": [
-           {
-            "code": "cy.get('#button123').contains('H');",
-            "context": null,
-            "duration": 695,
-            "err": {},
-            "fail": false,
-            "fullTitle": "BUTTON CONTAINS H this is from test file 2",
-            "isHook": false,
-            "parentUUID": "b8247960-3922-44f7-94de-b25254b52202",
-            "pass": true,
-            "pending": false,
-            "skipped": false,
-            "speed": "fast",
-            "state": "passed",
-            "timedOut": null,
-            "title": "this is from test file 2",
-            "uuid": "920b9d4a-1d7c-47ee-be6c-7fb085b610d8"
-           }
+            {
+              "code": "cy.get('#button123').contains('H');",
+              "context": null,
+              "duration": 695,
+              "err": {},
+              "fail": false,
+              "fullTitle": "BUTTON CONTAINS H this is from test file 2",
+              "isHook": false,
+              "parentUUID": "b8247960-3922-44f7-94de-b25254b52202",
+              "pass": true,
+              "pending": false,
+              "skipped": false,
+              "speed": "fast",
+              "state": "passed",
+              "timedOut": null,
+              "title": "this is from test file 2",
+              "uuid": "920b9d4a-1d7c-47ee-be6c-7fb085b610d8"
+            }
           ],
-          "title": "BUTTON CONTAINS H",
-          "uuid": "b8247960-3922-44f7-94de-b25254b52202",
-          "_timeout": 2000
-         }
+            "title": "BUTTON CONTAINS H",
+            "uuid": "b8247960-3922-44f7-94de-b25254b52202",
+            "_timeout": 2000
+          }
         ],
-        "tests": [],
-        "title": "",
-        "uuid": "ca50fd3a-fe3a-4575-8849-dbb09543aedd",
-        "_timeout": 2000
-       }
+          "tests": [],
+          "title": "",
+          "uuid": "ca50fd3a-fe3a-4575-8849-dbb09543aedd",
+          "_timeout": 2000
+        }
       ],
       "stats": {
-       "duration": 967,
-       "end": "2022-07-21T18:18:59.048Z",
-       "failures": 0,
-       "hasOther": false,
-       "hasSkipped": false,
-       "other": 0,
-       "passes": 1,
-       "passPercent": 100,
-       "pending": 0,
-       "pendingPercent": 0,
-       "skipped": 0,
-       "start": "2022-07-21T18:18:58.081Z",
-       "suites": 1,
-       "tests": 1,
-       "testsRegistered": 1
+        "duration": 967,
+        "end": "2022-07-21T18:18:59.048Z",
+        "failures": 0,
+        "hasOther": false,
+        "hasSkipped": false,
+        "other": 0,
+        "passes": 1,
+        "passPercent": 100,
+        "pending": 0,
+        "pendingPercent": 0,
+        "skipped": 0,
+        "start": "2022-07-21T18:18:58.081Z",
+        "suites": 1,
+        "tests": 1,
+        "testsRegistered": 1
       },
       "status": "pass"
-    },
+      },
     {
       "testFileName": "./cypress/e2e/first-test.cy.js",
       "testRunID": "6ff736cd-80da-4694-a1f2-7ec50dcd1933",
       "meta": {
-       "marge": {
-        "options": {
-         "html": false,
-         "json": true,
-         "overwrite": true,
-         "reportDir": "cypress/newResults",
-         "reportFilename": "[name]"
+        "marge": {
+          "options": {
+          "html": false,
+          "json": true,
+          "overwrite": true,
+          "reportDir": "cypress/newResults",
+          "reportFilename": "[name]"
         },
         "version": "6.2.0"
-       },
-       "mocha": {
+      },
+      "mocha": {
         "version": "7.0.1"
-       },
-       "mochawesome": {
-        "options": {
-         "code": true,
-         "consoleReporter": "spec",
-         "quiet": false,
-         "reportFilename": "[name]",
-         "saveHtml": false,
-         "saveJson": true,
-         "useInlineDiffs": false
+      },
+      "mochawesome": {
+      "options": {
+          "code": true,
+          "consoleReporter": "spec",
+          "quiet": false,
+          "reportFilename": "[name]",
+          "saveHtml": false,
+          "saveJson": true,
+          "useInlineDiffs": false
         },
         "version": "7.1.3"
-       }
+      }
       },
       "results": [
-       {
-        "afterHooks": [],
-        "beforeHooks": [],
-        "duration": 0,
-        "failures": [],
-        "file": "cypress/e2e/second-test.cy.js",
-        "fullFile": "cypress/e2e/second-test.cy.js",
-        "passes": [],
-        "pending": [],
-        "root": true,
-        "rootEmpty": true,
-        "skipped": [],
-        "suites": [
-         {
+        {
           "afterHooks": [],
           "beforeHooks": [],
-          "duration": 695,
+          "duration": 0,
           "failures": [],
-          "file": "",
-          "fullFile": "",
-          "passes": [
-           "920b9d4a-1d7c-47ee-be6c-7fb085b610d8"
-          ],
+          "file": "cypress/e2e/second-test.cy.js",
+          "fullFile": "cypress/e2e/second-test.cy.js",
+          "passes": [],
+          "pending": [],
+          "root": true,
+          "rootEmpty": true,
+          "skipped": [],
+          "suites": [
+            {
+            "afterHooks": [],
+            "beforeHooks": [],
+            "duration": 695,
+            "failures": [],
+            "file": "",
+            "fullFile": "",
+            "passes": [
+              "920b9d4a-1d7c-47ee-be6c-7fb085b610d8"
+            ],
           "pending": [],
           "root": false,
           "rootEmpty": false,
           "skipped": [],
           "suites": [],
           "tests": [
-           {
-            "code": "cy.get('#button123').contains('H');",
-            "context": null,
-            "duration": 695,
-            "err": {},
-            "fail": false,
-            "fullTitle": "BUTTON CONTAINS H this is from test file 2",
-            "isHook": false,
-            "parentUUID": "b8247960-3922-44f7-94de-b25254b52202",
-            "pass": true,
-            "pending": false,
-            "skipped": false,
-            "speed": "fast",
-            "state": "passed",
-            "timedOut": null,
-            "title": "this is from test file 2",
-            "uuid": "920b9d4a-1d7c-47ee-be6c-7fb085b610d8"
-           }
+            {
+              "code": "cy.get('#button123').contains('H');",
+              "context": null,
+              "duration": 695,
+              "err": {},
+              "fail": false,
+              "fullTitle": "BUTTON CONTAINS H this is from test file 2",
+              "isHook": false,
+              "parentUUID": "b8247960-3922-44f7-94de-b25254b52202",
+              "pass": true,
+              "pending": false,
+              "skipped": false,
+              "speed": "fast",
+              "state": "passed",
+              "timedOut": null,
+              "title": "this is from test file 2",
+              "uuid": "920b9d4a-1d7c-47ee-be6c-7fb085b610d8"
+            }
           ],
           "title": "BUTTON CONTAINS H",
           "uuid": "b8247960-3922-44f7-94de-b25254b52202",
           "_timeout": 2000
-         }
+          }
         ],
         "tests": [],
         "title": "",
         "uuid": "ca50fd3a-fe3a-4575-8849-dbb09543aedd",
         "_timeout": 2000
-       }
+        }
       ],
       "stats": {
-       "duration": 967,
-       "end": "2022-07-21T18:18:59.048Z",
-       "failures": 0,
-       "hasOther": false,
-       "hasSkipped": false,
-       "other": 0,
-       "passes": 1,
-       "passPercent": 100,
-       "pending": 0,
-       "pendingPercent": 0,
-       "skipped": 0,
-       "start": "2022-07-21T18:18:58.081Z",
-       "suites": 1,
-       "tests": 1,
-       "testsRegistered": 1
-      },
+          "duration": 967,
+          "end": "2022-07-21T18:18:59.048Z",
+          "failures": 0,
+          "hasOther": false,
+          "hasSkipped": false,
+          "other": 0,
+          "passes": 1,
+          "passPercent": 100,
+          "pending": 0,
+          "pendingPercent": 0,
+          "skipped": 0,
+          "start": "2022-07-21T18:18:58.081Z",
+          "suites": 1,
+          "tests": 1,
+          "testsRegistered": 1
+        },
       "status": "to be executed"
     }
   ]
