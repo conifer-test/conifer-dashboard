@@ -1,7 +1,19 @@
-
+import { useState, useEffect } from "react";
+import axios from "axios";
 import TableRow from './TableRow';
 
-const Table = ({ testFiles }) => {
+const Table = () => {
+  const [testFiles, setTestFiles] = useState([]);
+
+  useEffect(() => {
+    const fetchTestFiles = async () => {
+      const { data } = await axios.get('http://localhost:5001/api/testRuns/8c13ed42-e336-41cc-8f93-977a19b0f1ef');
+      setTestFiles(data);
+    }
+
+    fetchTestFiles();
+  }, []);
+
   return (
     <div className="flex flex-col mt-8">      
       <div className="py-2 -my-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
