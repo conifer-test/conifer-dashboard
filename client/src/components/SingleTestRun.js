@@ -12,7 +12,7 @@ const SingleTestRun = () => {
         <BreadCrumbs testRunID={id}/>
         
         <TestRunTile testRunID={id} />
-        <Table />
+        <Table testRunID={id} />
       </div>
     </div>
   )
