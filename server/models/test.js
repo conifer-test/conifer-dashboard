@@ -12,7 +12,8 @@ const getAll = async () => {
 
     // Map to get testRunIDs only
     const testRunIDs = data.Items.map(item => unmarshall(item).testRunID);
-    return testRunIDs;
+    const uniqueTestRuns = [...new Set(testRunIDs)];
+    return uniqueTestRuns;
   } catch (err) {
     console.error(err);
   }

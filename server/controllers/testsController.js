@@ -9,8 +9,9 @@ const getTestRuns = async (req, res, next) => {
 
 const getTestRun = async (req, res, next) => {
   try {
-    const testrunID = req.params.id;
-    const testRunData = await dynamo.getSingleTestRun(testrunID);
+    // const testrunID = req.params.id;
+    const testrunID = "8c13ed42-e336-41cc-8f93-977a19b0f1ef"
+    const testRunData = await dynamo.getSingle(testrunID);
     res.json(testRunData);
   } catch (e) {
     return next(new HttpError("TestRunID is missing or invalid", 404));
