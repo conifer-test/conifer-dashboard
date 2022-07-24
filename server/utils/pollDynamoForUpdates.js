@@ -19,7 +19,7 @@ const pollDynamoForNewData = (testRunID) => {
 };
 
 function pollDynamoDb(testRunID, taskArns) {
-    /* initiates polling test run data from dynamoDB for the dashboard for a given testRunID
+  /* initiates polling test run data from dynamoDB for the dashboard for a given testRunID
   updates the dashboard with newly polled data
   ends polling when there are no more active tasks
   */
@@ -35,6 +35,5 @@ function pollDynamoDb(testRunID, taskArns) {
     }
   }, POLLING_INTERVAL);
 }
-
 
 module.exports = pollDynamoDb;

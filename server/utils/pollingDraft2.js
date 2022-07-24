@@ -9,15 +9,14 @@ let currLatestTimeStamp = new Date('2010-07-20T03:43:35.505Z'); //arbitrarily ol
 let prevLatestTimeStamp = currLatestTimeStamp;
 let x = 7;
 
-
-async function itemsToUpdate (testRunID) {
+async function itemsToUpdate(testRunID) {
   /*
   input is testRunID, queries dynamoDB and returns array of test run objects
   that have not been updated on the dashboard
   */
   const items = await getItemsByTestRunID(testRunID);
   const newItems = [];
-  items.forEach(item => {
+  items.forEach((item) => {
     const itemDate = new Date(item.stats.end);
     if (prevLatestTimeStamp < itemDate) {
       newItems.push(item);
@@ -35,7 +34,6 @@ async function updateDashboard(newItems) {
   console.log('dashboard updated!');
 }
 
-
 function areTasksActive() {
   // filler function, replace with actual areTasksActive
   x -= increment;
@@ -47,8 +45,6 @@ function terminateDashboard() {
   // filler function to stop polling the dashboard
   console.log('dashbaord terminated');
 }
-
-
 
 const pollData = (testRunID) => {
   //helper function for pollDynamoDb
@@ -63,10 +59,10 @@ const pollData = (testRunID) => {
 };
 
 function pollDynamoDb(testRunID) {
-    /* initiates polling test run data from dynamoDB for the dashboard for a given testRunID
+  /* initiates polling test run data from dynamoDB for the dashboard for a given testRunID
   updates the dashboard with newly polled data
   ends polling when there are no more active tasks
-  */ 
+  */
   const intervalClear = pollData(testRunID);
 
   const tasksActive = setInterval(() => {
