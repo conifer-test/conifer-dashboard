@@ -5,8 +5,10 @@ require('dotenv').config();
 const { areTasksRunning } = require('./utils/areTasksRunning');
 const pollDynamoDb = require('./utils/pollDynamoForUpdates');
 const fs = require('fs');
+const { createSession } = require('better-sse');
 
 const app = express();
+let sseSession;
 
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
@@ -35,6 +37,19 @@ app.use((err, req, res, next) => {
 });
 
 const port = process.env.PORT || 5001;
+
+// Create a sse server for listening to webhooks
+app.get('/sse', async (req, res) => {
+  sseSession = await createSession(req, res);
+});
+
+// Receiving the webhook for testFile updated
+app.post('/testFileUpdated', (req, res, next) => {
+  const { data } = req.body;
+
+  sseSession.push(data);
+  res.status(200).end();
+});
 
 // For testing purposes
 app.listen(port, async () => {
