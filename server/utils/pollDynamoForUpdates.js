@@ -1,5 +1,6 @@
 const determineEntriesToUpdate = require('./determineEntriesToUpdate');
 const { areTasksRunning: areTasksStopped } = require('./areTasksRunning');
+const sendWebhooks = require('./webHook');
 
 const POLLING_INTERVAL = 4000;
 const EMPTY = 0;
@@ -8,10 +9,10 @@ const pollDynamoForNewData = (testRunID) => {
   //helper function for pollDynamoDb
   return setInterval(async () => {
     const newItems = await determineEntriesToUpdate(testRunID);
-    console.log('newItems: ', newItems);
+    // console.log('newItems: ', newItems);
     if (newItems.length !== EMPTY) {
-      // updateDashboard(newItems); UNCOMMENT THIS AFTER*******
-      console.log('Initiating updates of dynamo!');
+      sendWebhooks(newItems);
+      // console.log('Initiating updates of dynamo!');
     } else {
       console.log('no new items to update');
     }
