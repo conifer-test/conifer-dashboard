@@ -6,7 +6,7 @@ const { awsRegion: region } = JSON.parse(
   fs.readFileSync('../../conifer-config.json')
 );
 
-const areTasksRunning = async (taskArns) => {
+const areTasksStopped = async (taskArns) => {
   const cdkOutputs = JSON.parse(fs.readFileSync(CDK_OUTPUTS_PATH));
   const client = new ECSClient({ region });
 
@@ -25,4 +25,4 @@ const areTasksRunning = async (taskArns) => {
   });
 };
 
-module.exports = { areTasksRunning };
+module.exports = areTasksStopped;

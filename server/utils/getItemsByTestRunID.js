@@ -1,6 +1,6 @@
 const { QueryCommand } = require('@aws-sdk/client-dynamodb');
 const { unmarshall } = require('@aws-sdk/util-dynamodb');
-const { ddbDocClient } = require('./ddb-doc-client.js');
+const { ddbDocClient } = require('../models/ddb-doc-client');
 const fs = require('fs');
 
 const {
