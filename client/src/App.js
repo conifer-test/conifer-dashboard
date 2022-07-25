@@ -6,7 +6,7 @@ import SingleTestRun from "./components/SingleTestRun";
 
 function App() {
   return (
-    <div className="flex h-screen">
+    <div className="flex max-h-fit min-h-screen">
       <Sidebar />
       <Routes>
         <Route path="/" element={<Home />}/>
