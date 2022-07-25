@@ -27,12 +27,14 @@ app.get('/sse', async (req, res) => {
 });
 
 // Receiving the webhook for testFile updated
-app.post('/testFileUpdated', (req, res, next) => {
-  const { data } = req.body;
-
-  console.log('sse webhook', data);
-  sseSession.push(data);
-  res.status(200).end();
+app.post('/testFileUpdated', (req, res) => {
+  const data = req.body;
+  try {
+    sseSession.push(data);
+    res.status(200).end();
+  } catch (err) {
+    console.log('SSE Error: ', err);
+  }
 });
 
 app.use('/api', routes);
@@ -63,7 +65,7 @@ app.listen(port, async () => {
 
   const areTasksTest = await areTasksRunning(taskRunARNs);
   console.log('areTasksTest: ', areTasksTest);
-  console.log('TEST_RUN_ID ->', testRunId);
+
   // const res = await getItemsByTestRunID('c2a72ecf-ad30-44b0-a035-130e527b8457');
   // console.log(res);
   // pollDynamoDb('c2a72ecf-ad30-44b0-a035-130e527b8457', taskArns);

@@ -9,10 +9,10 @@ const pollDynamoForNewData = (testRunID) => {
   //helper function for pollDynamoDb
   return setInterval(async () => {
     const newItems = await determineEntriesToUpdate(testRunID);
-    console.log('newItems: ', newItems);
+    // console.log('newItems: ', newItems);
     if (newItems.length !== EMPTY) {
-      sendWebhooks(JSON.stringify(newItems));
-      console.log('Initiating updates of dynamo!');
+      sendWebhooks(newItems);
+      // console.log('Initiating updates of dynamo!');
     } else {
       console.log('no new items to update');
     }
