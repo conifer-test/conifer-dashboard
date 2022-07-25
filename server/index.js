@@ -53,20 +53,18 @@ app.post('/testFileUpdated', (req, res, next) => {
 
 // For testing purposes
 app.listen(port, async () => {
-  const { testRunId } = JSON.parse(
+  const { testRunId, taskRunARNs } = JSON.parse(
     fs.readFileSync('../../conifer-config.json')
   );
 
   console.log(`Server running on port ${port}`); //ORIGINAL
-
-  const taskArns = JSON.parse(process.env.TASK_ARNS);
   // console.log('taskArns: ', taskArns);
 
-  const areTasksTest = await areTasksRunning(taskArns);
+  const areTasksTest = await areTasksRunning(taskRunARNs);
   console.log('areTasksTest: ', areTasksTest);
 
   // const res = await getItemsByTestRunID('c2a72ecf-ad30-44b0-a035-130e527b8457');
   // console.log(res);
   // pollDynamoDb('c2a72ecf-ad30-44b0-a035-130e527b8457', taskArns);
-  pollDynamoDb(testRunId, taskArns);
+  pollDynamoDb(testRunId, taskRunARNs);
 });
