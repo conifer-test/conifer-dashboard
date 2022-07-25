@@ -24,8 +24,15 @@ const SingleTestRun = () => {
   const sse = new EventSource('http://localhost:5001/sse');
 
   sse.addEventListener('message', ({ data }) => {
-    const updatedData = JSON.parse(data);
-    console.log(data);
+    // const updatedData = JSON.parse(data);
+    const { newData } = await axios.get(
+      `http://localhost:5001/api/testRuns/${id}`
+    );
+
+    setTestFiles(newData);
+    console.log("this line was executed");
+    console.log(newData);
+    // console.log(data);
     // If data is sending the entire test files for a run, use setTestFiles and update entire thing
     // else, we update only the data that has been updated using map or something like that
   });

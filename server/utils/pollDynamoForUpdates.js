@@ -11,7 +11,7 @@ const pollDynamoForNewData = (testRunID) => {
     const newItems = await determineEntriesToUpdate(testRunID);
     console.log('newItems: ', newItems);
     if (newItems.length !== EMPTY) {
-      sendWebhooks(newItems);
+      sendWebhooks(JSON.stringify(newItems));
       console.log('Initiating updates of dynamo!');
     } else {
       console.log('no new items to update');
