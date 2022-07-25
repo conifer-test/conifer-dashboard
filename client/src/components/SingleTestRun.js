@@ -2,6 +2,8 @@ import Table from './Table';
 import TestRunTile from './TestRunTile';
 import { useParams } from 'react-router-dom';
 import BreadCrumbs from './Breadcrumbs';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 const SingleTestRun = () => {
   const { id } = useParams();
@@ -11,13 +13,13 @@ const SingleTestRun = () => {
   useEffect(() => {
     const fetchTestFiles = async () => {
       const { data } = await axios.get(
-        `http://localhost:5001/api/testRuns/${testRunID}`
+        `http://localhost:5001/api/testRuns/${id}`
       );
       setTestFiles(data);
     };
 
     fetchTestFiles();
-  }, [testRunID]);
+  }, [id]);
 
   const sse = new EventSource('http://localhost:5001/sse');
 
