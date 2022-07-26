@@ -15,6 +15,15 @@ const Dashboard = () => {
     fetchTestRuns();
   }, []);
 
+  const sse = new EventSource('http://localhost:5001/api/sse');
+
+  sse.addEventListener('message', async ({ data }) => {
+    const { testRunId } = JSON.parse(data);
+    setTestRuns((prevData) => {
+      return prevData.concat(testRunId);
+    });
+  });
+
   return (
     <div className='w-full px-4 py-2 bg-gray-200 lg:w-full'>
       <div className='container mx-auto mt-12'>
