@@ -1,5 +1,5 @@
 const determineEntriesToUpdate = require('./determineEntriesToUpdate');
-const { areTasksRunning: areTasksStopped } = require('./areTasksRunning');
+const areTasksStopped = require('./areTasksStopped');
 const sendWebhooks = require('./webHook');
 
 const POLLING_INTERVAL = 4000;

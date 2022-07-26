@@ -25,15 +25,9 @@ const SingleTestRun = () => {
 
   sse.addEventListener('message', async ({ data }) => {
     const newData = JSON.parse(data);
-    // const { data } = await axios.get(`http://localhost:5001/api/testRuns/${id}`)
     setTestFiles((prevData) => {
       return prevData.concat(...newData);
     });
-    // setTestFiles();
-
-    // console.log(data);
-    // If data is sending the entire test files for a run, use setTestFiles and update entire thing
-    // else, we update only the data that has been updated using map or something like that
   });
 
   return (
