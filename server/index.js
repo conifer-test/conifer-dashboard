@@ -1,13 +1,13 @@
 const express = require('express');
-const { createSession } = require('better-sse');
-const fs = require('fs');
+// const { createSession } = require('better-sse');
+// const fs = require('fs');
 const routes = require('./routes/api');
 const HttpError = require('./models/httpError');
-const pollDynamoDb = require('./utils/pollDynamoForUpdates');
+// const pollDynamoDb = require('./utils/pollDynamoForUpdates');
 require('dotenv').config();
 
 const app = express();
-let sseSession;
+// let sseSession;
 
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
@@ -21,20 +21,20 @@ app.use((req, res, next) => {
 app.use(express.json());
 
 // Create a sse server for listening to webhooks
-app.get('/sse', async (req, res) => {
-  sseSession = await createSession(req, res);
-});
+// app.get('/sse', async (req, res) => {
+//   sseSession = await createSession(req, res);
+// });
 
 // Receiving the webhook for testFile updated
-app.post('/testFileUpdated', (req, res) => {
-  const data = req.body;
-  try {
-    sseSession.push(data);
-    res.status(200).end();
-  } catch (err) {
-    console.log('SSE Error: ', err);
-  }
-});
+// app.post('/testFileUpdated', (req, res) => {
+//   const data = req.body;
+//   try {
+//     sseSession.push(data);
+//     res.status(200).end();
+//   } catch (err) {
+//     console.log('SSE Error: ', err);
+//   }
+// });
 
 app.use('/api', routes);
 
