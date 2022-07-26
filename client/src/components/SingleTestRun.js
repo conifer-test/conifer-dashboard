@@ -7,7 +7,6 @@ import axios from 'axios';
 
 const SingleTestRun = () => {
   const { id } = useParams();
-
   const [testFiles, setTestFiles] = useState([]);
 
   useEffect(() => {
@@ -21,7 +20,7 @@ const SingleTestRun = () => {
     fetchTestFiles();
   }, [id]);
 
-  const sse = new EventSource('http://localhost:5001/sse');
+  const sse = new EventSource('http://localhost:5001/api/sse');
 
   sse.addEventListener('message', async ({ data }) => {
     const newData = JSON.parse(data);

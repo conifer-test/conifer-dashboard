@@ -1,15 +1,15 @@
 const { createSession } = require('better-sse');
 
-const createSseSession = async (req, res, next) => {
-  const session = await createSession(req, res);
-  res.sse = session;
-  next();
+let session;
+
+const createSseSession = async (req, res) => {
+  session = await createSession(req, res);
 };
 
 const webhook = async (req, res) => {
   const data = req.body;
   try {
-    res.sse.push(data);
+    session.push(data);
     res.status(200).end();
   } catch (err) {
     console.log('SSE Error: ', err);

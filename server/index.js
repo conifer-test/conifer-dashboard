@@ -1,5 +1,4 @@
 const express = require('express');
-// const { createSession } = require('better-sse');
 // const fs = require('fs');
 const routes = require('./routes/api');
 const HttpError = require('./models/httpError');
@@ -7,7 +6,6 @@ const HttpError = require('./models/httpError');
 require('dotenv').config();
 
 const app = express();
-// let sseSession;
 
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
@@ -19,22 +17,6 @@ app.use((req, res, next) => {
 });
 
 app.use(express.json());
-
-// Create a sse server for listening to webhooks
-// app.get('/sse', async (req, res) => {
-//   sseSession = await createSession(req, res);
-// });
-
-// Receiving the webhook for testFile updated
-// app.post('/testFileUpdated', (req, res) => {
-//   const data = req.body;
-//   try {
-//     sseSession.push(data);
-//     res.status(200).end();
-//   } catch (err) {
-//     console.log('SSE Error: ', err);
-//   }
-// });
 
 app.use('/api', routes);
 
@@ -51,12 +33,12 @@ app.use((err, req, res, next) => {
   res.json({ error: err.message || 'An unknown error occured' });
 });
 
-const port = process.env.PORT || 5001;
+const PORT = process.env.PORT || 5001;
 
-app.listen(port, async () => {
+app.listen(PORT, async () => {
   // const { testRunId, taskRunARNs } = JSON.parse(
   //   fs.readFileSync('../../conifer-config.json')
   // );
-  console.log(`Server running on port ${port}`);
+  console.log(`Server running on port ${PORT}`);
   // pollDynamoDb(testRunId, taskRunARNs);
 });
