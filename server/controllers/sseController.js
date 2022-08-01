@@ -7,9 +7,9 @@ const createSseSession = async (req, res) => {
 };
 
 const webhook = async (req, res) => {
-  const data = req.body;
+  const { data, eventName } = req.body;
   try {
-    session.push(data);
+    session.push(data, eventName);
     res.status(200).end();
   } catch (err) {
     console.log('SSE Error: ', err);
