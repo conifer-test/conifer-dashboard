@@ -1,4 +1,8 @@
+import { useState } from 'react';
+import ReactPlayer from 'react-player';
+
 const TableRow = ({ testFile }) => {
+  const [displayVideo, setDisplayVideo] = useState(false);
   const renderStatusColor = () => {
     if (testFile.status === 'pass') {
       return 'inline-flex px-2 text-xs font-semibold leading-5 text-green-800 bg-green-100 rounded-full';
@@ -49,7 +53,19 @@ const TableRow = ({ testFile }) => {
 
       <td className='px-6 py-4 whitespace-no-wrap border-b border-gray-200'>
         <span className='text-sm leading-5 text-gray-800'>
-          <a href={testFile.videoUrl}>Video</a>
+          <a href='#' onClick={() => setDisplayVideo(!displayVideo)}>
+            Video
+          </a>
+          {displayVideo && (
+            <ReactPlayer
+              className='react-player fixed-bottom'
+              width='100%'
+              height='100%'
+              url={testFile.videoUrl}
+              controls={true}
+              muted={true}
+            />
+          )}
         </span>
       </td>
     </tr>
