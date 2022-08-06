@@ -49,10 +49,9 @@ const TableRow = ({ testFile }) => {
 
       <td className='px-6 py-4 whitespace-no-wrap border-b border-gray-200'>
         <span className='text-sm leading-5 text-gray-800'>
-          <a href={testFile.signedUrl}>Video</a>
+          <a href={testFile.videoUrl}>Video</a>
         </span>
       </td>
-      
     </tr>
   );
 };
