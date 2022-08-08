@@ -1,8 +1,11 @@
 import { useState } from 'react';
 import ReactPlayer from 'react-player';
+import TestSuites from './TestSuites';
 
 const TableRow = ({ testFile }) => {
   const [displayVideo, setDisplayVideo] = useState(false);
+  const [displayTests, setDisplayTests] = useState(false);
+
   const renderStatusColor = () => {
     if (testFile.status === 'pass') {
       return 'inline-flex px-2 text-xs font-semibold leading-5 text-green-800 bg-green-100 rounded-full';
@@ -13,62 +16,79 @@ const TableRow = ({ testFile }) => {
     }
   };
 
+  const testSuites = testFile.results[0].suites;
+
   return (
-    <tr>
-      <td className='px-6 py-4 whitespace-no-wrap border-b border-gray-200'>
-        <div className='text-sm leading-5 text-gray-800'>
-          {testFile.testFileName}
-        </div>
-      </td>
+    <>
+      <tr>
+        <td
+          onClick={() => setDisplayTests(!displayTests)}
+          className='px-1 py-4 whitespace-no-wrap border-b border-gray-200 text-center'
+        >
+          <button className='text-sm leading-5 text-gray-800'>
+            {displayTests ? '-' : '+'}
+          </button>
+        </td>
+        <td className='pr-6 py-4 whitespace-no-wrap border-b border-gray-200'>
+          <div className='text-sm leading-5 text-gray-800'>
+            {testFile.testFileName}
+          </div>
+        </td>
 
-      <td className='px-6 py-4 whitespace-no-wrap border-b border-gray-200'>
-        <span className={renderStatusColor()}>
-          {testFile.status ? testFile.status : 'undefined'}
-        </span>
-      </td>
+        <td className='px-6 py-4 whitespace-no-wrap border-b border-gray-200'>
+          <span className={renderStatusColor()}>
+            {testFile.status ? testFile.status : 'undefined'}
+          </span>
+        </td>
 
-      <td className='px-6 py-4 whitespace-no-wrap border-b border-gray-200'>
-        <span className='text-sm leading-5 text-gray-800'>
-          {(testFile.stats.duration / 1000).toFixed(2)}s
-        </span>
-      </td>
+        <td className='px-6 py-4 whitespace-no-wrap border-b border-gray-200'>
+          <span className='text-sm leading-5 text-gray-800'>
+            {(testFile.stats.duration / 1000).toFixed(2)}s
+          </span>
+        </td>
 
-      <td className='px-6 py-4 whitespace-no-wrap border-b border-gray-200'>
-        <span className='inline-flex px-2 text-xs font-semibold leading-5 text-blue-800 bg-blue-100 rounded-full mx-px'>
-          Total: {Math.floor(testFile.stats.tests)}
-        </span>
+        <td className='px-6 py-4 whitespace-no-wrap border-b border-gray-200'>
+          <span className='inline-flex px-2 text-xs font-semibold leading-5 text-blue-800 bg-blue-100 rounded-full mx-px'>
+            Total: {Math.floor(testFile.stats.tests)}
+          </span>
 
-        <span className='inline-flex px-2 text-xs font-semibold leading-5 text-green-800 bg-green-100 rounded-full mx-px'>
-          Passes: {Math.floor(testFile.stats.passes)}
-        </span>
+          <span className='inline-flex px-2 text-xs font-semibold leading-5 text-green-800 bg-green-100 rounded-full mx-px'>
+            Passes: {Math.floor(testFile.stats.passes)}
+          </span>
 
-        <span className='inline-flex px-2 text-xs font-semibold leading-5 text-red-800 bg-red-100 rounded-full mx-px'>
-          Failures: {Math.floor(testFile.stats.failures)}
-        </span>
+          <span className='inline-flex px-2 text-xs font-semibold leading-5 text-red-800 bg-red-100 rounded-full mx-px'>
+            Failures: {Math.floor(testFile.stats.failures)}
+          </span>
 
-        <span className='inline-flex px-2 text-xs font-semibold leading-5 text-gray-800 bg-gray-100 rounded-full mx-px'>
-          Skipped: {Math.floor(testFile.stats.skipped)}
-        </span>
-      </td>
+          <span className='inline-flex px-2 text-xs font-semibold leading-5 text-gray-800 bg-gray-100 rounded-full mx-px'>
+            Skipped: {Math.floor(testFile.stats.skipped)}
+          </span>
+        </td>
 
-      <td className='px-6 py-4 whitespace-no-wrap border-b border-gray-200'>
-        <span className='text-sm leading-5 text-gray-800'>
-          <a href='#' onClick={() => setDisplayVideo(!displayVideo)}>
-            Video
-          </a>
-          {displayVideo && (
-            <ReactPlayer
-              className='react-player fixed-bottom'
-              width='100%'
-              height='100%'
-              url={testFile.videoUrl}
-              controls={true}
-              muted={true}
-            />
-          )}
-        </span>
-      </td>
-    </tr>
+        <td className='px-6 py-4 whitespace-no-wrap border-b border-gray-200'>
+          <span className='text-sm leading-5 text-gray-800'>
+            <button onClick={() => setDisplayVideo(!displayVideo)}>
+              Video
+            </button>
+            {displayVideo && (
+              <ReactPlayer
+                autoPlay={true}
+                className='react-player fixed-bottom'
+                width='100%'
+                height='100%'
+                url={testFile.videoUrl}
+                controls={true}
+                muted={true}
+              />
+            )}
+          </span>
+        </td>
+      </tr>
+      {displayTests &&
+        testSuites.map((testSuite) => (
+          <TestSuites key={testSuite.uuid} testSuite={testSuite} />
+        ))}
+    </>
   );
 };
 
