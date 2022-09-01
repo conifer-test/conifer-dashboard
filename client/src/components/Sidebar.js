@@ -3,12 +3,12 @@ import { NavLink } from 'react-router-dom';
 
 const Sidebar = () => {
   const inactiveClassName =
-    'inline-block w-full h-full px-3 py-2 font-bold text-white mb-2 rounded hover:shadow hover:bg-gray-800';
+    'inline-block w-full h-full px-3 py-2 font-bold text-white mb-2 rounded hover:shadow hover:bg-gray-600';
   const activeClassName =
-    'inline-block w-full h-full px-3 py-2 font-bold text-white mb-2 bg-gray-800 rounded shadow';
+    'inline-block w-full h-full px-3 py-2 font-bold text-white mb-2 bg-gray-600 rounded shadow';
 
   return (
-    <div className='px-4 py-2 bg-gray-200 bg-green-900 lg:w-1/4'>
+    <div className='px-4 py-2 bg-[#23262d] lg:w-1/5'>
       <svg
         xmlns='http://www.w3.org/2000/svg'
         className='inline w-8 h-8 text-white lg:hidden'
@@ -26,7 +26,12 @@ const Sidebar = () => {
 
       <div className='hidden lg:block'>
         <div className='my-2 mb-6'>
-          <h1 className='text-2xl font-bold text-white'>conifer</h1>
+          {/* <h1 className='text-2xl font-bold text-white'>conifer</h1> */}
+          <img
+            src='../conifer_white_logo_colorPNG.png'
+            width='150'
+            alt='conifer'
+          ></img>
         </div>
 
         <ul>

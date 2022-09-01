@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 const TestRunTile = ({ testRunID }) => {
   return (
     <>
-      <Link to={`/testRuns/${testRunID}`}>
+      <Link reloadDocument to={`/testRuns/${testRunID}`}>
         <div className='flex items-center px-4 py-4 bg-white rounded-md shadow-md'>
-          <div className='p-3 bg-green-600 rounded'>
+          <div className='p-3 bg-gradient-to-b from-[#01ffab] to-[#10b981] rounded'>
             <svg
               xmlns='http://www.w3.org/2000/svg'
               className='w-6 h-6 text-white'
