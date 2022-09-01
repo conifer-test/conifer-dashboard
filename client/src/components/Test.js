@@ -34,18 +34,17 @@ const Test = ({ test, indent }) => {
         <div className='text-xs leading-5 text-gray-800'>{test.title}</div>
       </td>
 
-      <td className='px-6 whitespace-no-wrap border-b border-gray-100'>
+      <td className='px-6 whitespace-no-wrap border-b border-gray-100 text-center'>
         <span className={renderStatusColor()}>{testStatus()}</span>
       </td>
 
-      <td
-        className='px-6 whitespace-no-wrap border-b border-gray-100'
-        colSpan='3'
-      >
+      <td className='px-6 whitespace-no-wrap border-b border-gray-100 text-center'>
         <span className='text-sm leading-5 text-gray-800'>
           {(test.duration / 1000).toFixed(2)}s
         </span>
       </td>
+      <td className='px-6 whitespace-no-wrap border-b border-gray-100 text-center'></td>
+      <td className='px-6 whitespace-no-wrap border-b border-gray-100 text-center'></td>
     </tr>
   );
 };

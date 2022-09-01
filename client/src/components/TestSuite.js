@@ -29,17 +29,16 @@ const TestSuite = ({ suite }) => {
         <td className='px-6 py-1 whitespace-no-wrap border-b border-gray-150'>
           <div className='text-sm leading-5 text-gray-800'>{suite.title}</div>
         </td>
-        <td className='px-6 py-1 whitespace-no-wrap border-b border-gray-150'>
+        <td className='px-6 py-1 whitespace-no-wrap border-b border-gray-150 text-center'>
           <span className={renderStatusColor()}>{suiteStatus}</span>
         </td>
-        <td
-          className='px-6 py-1 whitespace-no-wrap border-b border-gray-150'
-          colSpan={3}
-        >
-          <div className='text-sm leading-5 text-gray-800'>
+        <td className='px-6 py-1 whitespace-no-wrap border-b border-gray-150'>
+          <div className='text-sm leading-5 text-gray-800 text-center'>
             {(suite.duration / 1000).toFixed(2)}s
           </div>
         </td>
+        <td className='px-6 whitespace-no-wrap border-b border-gray-100 text-center'></td>
+        <td className='px-6 whitespace-no-wrap border-b border-gray-100 text-center'></td>
       </tr>
       {tests.map((test) => (
         <Test key={test.uuid} test={test} indent={true} />

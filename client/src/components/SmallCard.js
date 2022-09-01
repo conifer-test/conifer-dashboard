@@ -1,7 +1,7 @@
 const SmallCard = ({ total, description }) => {
   return (
-    <div className='flex items-center px-4 py-6 bg-white rounded-md shadow-md'>
-      <div className='p-3 bg-green-600 rounded'>
+    <div className='flex items-center px-4 py-6 bg-white rounded-md shadow-md cursor-pointer'>
+      <div className='p-3 bg-gradient-to-b from-[#01ffab] to-[#10b981] rounded'>
         <svg
           xmlns='http://www.w3.org/2000/svg'
           className='w-6 h-6 text-white'
