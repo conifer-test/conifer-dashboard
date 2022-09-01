@@ -15,7 +15,6 @@ const getTestRun = async (req, res, next) => {
     const testRunData = await dynamo.getSingle(testrunID);
     res.json(testRunData);
   } catch (e) {
-    console.log(e);
     return next(new HttpError('TestRunID is missing or invalid', 404));
   }
 };
